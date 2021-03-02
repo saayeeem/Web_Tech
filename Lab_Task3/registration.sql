@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2021 at 11:01 AM
+-- Generation Time: Mar 02, 2021 at 12:25 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -38,6 +38,21 @@ CREATE TABLE `registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `registration`
+--
+
+INSERT INTO `registration` (`reg_id`, `firstname`, `username`, `email`, `password`, `birthdate`, `gender`) VALUES
+(1, 'Sayem', 'chowdhury', 'sayem@gmail.com', '12345678', '12-12-12', 'male'),
+(2, 'Mohammad Sayem', 'chowdhury', 'sayem@gmail.com', '12345678', '12-12-12', 'male'),
+(3, 'Mohammad Sayem', 'chowdhury', 'sayem@gmail.com', '12345678', '12-12-12', 'male'),
+(4, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '12-12-12', 'male'),
+(5, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '12-12-12', ''),
+(6, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '', ''),
+(7, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '', ''),
+(8, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '', ''),
+(9, 'Mohammad Sayem', 'sssr3f4r3f', 'sayem@', '12345678', '2021-03-17', 'male');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -56,7 +71,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

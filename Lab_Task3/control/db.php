@@ -17,10 +17,16 @@ $result = $conn->query("SELECT * FROM ". $table." WHERE username='". $username."
  return $result;
  }
 
-function InsertUser($conn, $table, $firstname,$username, $password, $email, $birthday, $gender)
+function InsertUser($conn,$table,$firstname, $username, $email,$password,$birthdate,$gender)
 {
-    $result = $conn->query("INSERT INTO '". $table ."' values($firstname,$username,$password,$email,$birthday,$gender)");
-    return $result;
+    $result = "INSERT INTO " . $table . " (firstname,username,email,password,birthdate,gender)
+    VALUES('$firstname','$username','$email','$password','$birthdate','$gender')";
+    if ($conn->query($result) === TRUE) {
+        echo "New record created successfully";
+        return $result;
+    } else {
+        echo "Error: " . $result . "<br>" . $conn->error;
+    }
 }
 
  function ShowAll($conn,$table)

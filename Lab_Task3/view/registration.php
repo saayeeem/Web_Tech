@@ -1,9 +1,6 @@
 <?php
 include('../control/registrationcheck.php');
 
-if (isset($_SESSION['username'])) {
-    header("location: registration.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +14,8 @@ if (isset($_SESSION['username'])) {
     $validatepass = "";
     $validatecpass = "";
     $validateradio = "";
-    $gender = "";
-    $birthday = "";
+    $gender = $_REQUEST["gender"];
+    $birthday = $_REQUEST["birthday"];
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fname = $_REQUEST["fname"];
         $uname = $_REQUEST["uname"];
@@ -31,7 +28,7 @@ if (isset($_SESSION['username'])) {
 
         if (empty($uname) || empty($email) || empty($fname) || empty($pass) || empty($cpass)) {
             $msg = "All fields are requied";
-        } else if ((strlen($uname) < 5) || (!preg_match($pattern1, $uname))) {
+        } else if ((strlen($uname) < 5)) {
             $msg = "your user name name should be contain 5 characters and alpha numeric characters, period, dash or underscore";
         } else if ((strlen($pass) < 8) && (strlen($pass) < 8)) {
             $msg = "your password should be contain 8 characters";
