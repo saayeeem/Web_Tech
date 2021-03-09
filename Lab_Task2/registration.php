@@ -18,18 +18,18 @@
     $email = $_REQUEST["email"];
     $pass = $_REQUEST["pass"];
     $cpass = $_REQUEST["cpass"];
-    $pattern1 = "'/^[a-zA-Z-.-_' ]*$/'";
-    $pattern2 = "'/^[a-zA-Z-.-_' ]*$/'";
-    $pattern3 = "'/^[a-zA-Z-.-_' ]*$/'";
+    $pattern1 = "/^[0-9a-zA-Z-_]/";
+
 
     if (empty($uname) || empty($email) || empty($fname) || empty($pass) || empty($cpass)) {
       $msg = "All fields are requied";
-    } else if ((strlen($uname) < 5) || (!preg_match($pattern1, $uname)))
+    }
+    else if ((strlen($uname) < 5) || (!preg_match($pattern1, $uname)))
     {
       $msg = "your user name name should be contain 5 characters and alpha numeric characters, period, dash or underscore";
     } else if ((strlen($pass) < 8) && (strlen($pass) < 8)) {
       $msg = "your password should be contain 8 characters";
-    } else if (strpos($email, "@") === false) {
+    } else if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) {
       $msg = "Email address must contain @";
     } else if (!isset($_REQUEST["gender"])) {
       $msg = "you have to select gender";
