@@ -28,8 +28,7 @@ session_start();
         $state = $_REQUEST["state"];
         $pcode = $_REQUEST["pcode"];
         $country = $_REQUEST["country"];
-        $target_dir = "../uploads/";
-        $target_file = $target_dir . $_FILES["filetoupload"]["name"];
+
 
 
         if (empty($id) || empty($name) || empty($email) || empty($street) || empty($state) || empty($pcode)) {
