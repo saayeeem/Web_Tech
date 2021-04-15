@@ -15,8 +15,7 @@ include('../control/registrationcheck.php');
     $validatepass = "";
     $validatecpass = "";
     $validateradio = "";
-    $birthday = "";
-    $gender = "";
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fname = $_REQUEST["fname"];
